@@ -4,21 +4,11 @@ import glob
 import os
 import sys
 import subprocess
+import arghelper
 from pathlib import Path
 from datetime import datetime
 
-if len(sys.argv) > 2:
-    print("Too many arguments.")
-    sys.exit()
-
-if len(sys.argv) < 2:
-    rompath = Path.cwd()
-else:
-    if not Path(sys.argv[1]).exists:
-        print("The path you specified doesn't exist.")
-        sys.exit()
-    rompath = sys.argv[1]
-
+rompath = arghelper.get_rompath()
 gamefile = Path("gameslist.txt")
 date = datetime.today().strftime("%d-%m-%Y")
 
