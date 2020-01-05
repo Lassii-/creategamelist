@@ -24,8 +24,8 @@ try:
                 Path(gamefile.parent, f"{gamefile.stem}_{date}" + gamefile.suffix))
         elif(answer == "N"):
             gamefile.unlink()
-except Exception:
-    print("Unexpected error:", sys.exc_info()[0])
+except OSError as e:
+    print(e)
 
 try:
     with open(gamefile, "a") as output:
@@ -34,5 +34,5 @@ try:
                 print(os.path.join(file))
                 output.write(file+"\n")
     os.system(f"sort {gamefile} -o {gamefile}")
-except Exception:
-    print("Unexpected error:", sys.exc_info()[0])
+except OSError as e:
+    print(e)

@@ -15,5 +15,5 @@ try:
             for game in gameslist:
                 os.rename(os.path.join(rompath, game.strip()),
                           output / game.strip())
-except IOError:
-    print("Can't find gameslist.txt!")
+except OSError as e:
+    print(e)
