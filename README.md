@@ -1,6 +1,6 @@
  # MAME Tools
 
-Tools I've created to manage my MAME ROM-collection. These are written with Linux in mind so they won't work on Windows.
+Tools I've created to manage my MAME ROM-collection. These are written with Linux in mind so they won't work on Windows for now.
 
 ## Current tools
 * creategamelist
