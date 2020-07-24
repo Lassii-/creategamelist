@@ -14,4 +14,5 @@ def get_rompath():
             print("The path you specified doesn't exist.")
             sys.exit()
         rompath = sys.argv[1]
+    rompath = Path(rompath)
     return rompath
