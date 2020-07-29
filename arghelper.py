@@ -19,7 +19,7 @@ def get_rompath():
 
 
 def get_gameslist():
-    answer = input("Which platform? (MAME/NES/SNES/GB/GBC/GBA/N64/PCE/MD ")
+    answer = input("Which platform? (MAME/NES/SNES/GB/GBC/GBA/N64/PCE/MD) ")
 
     while(answer != "MAME" and answer != "NES" and answer != "SNES" and answer != "GB" and answer != "GBC" and answer != "GBA" and answer != "N64" and answer != "PCE" and answer != "MD"):
         print("You didn't pick a correct platform! Choose from MAME/NES/SNES/GB/GBC/N64/PCE/MD")
