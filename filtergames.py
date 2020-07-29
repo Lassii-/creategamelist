@@ -5,8 +5,8 @@ import sys
 import arghelper
 from pathlib import Path
 
-gamefile = Path("gameslist.txt")
 rompath = arghelper.get_rompath()
+gamefile = arghelper.get_gameslist()
 
 try:
     with open(gamefile) as gameslist:
