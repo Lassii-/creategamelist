@@ -18,19 +18,20 @@ try:
             print("Only accepting Y for yes and N for no.")
             answer = input("Y/N?\n")
         if(answer == "Y"):
+            # Rename the old file with current date appended to the filename
             gamefile.rename(
                 Path(gamefile.parent, f"{gamefile.stem}_{date}" + gamefile.suffix))
         elif(answer == "N"):
+            # Remove the old file
             gamefile.unlink()
 except OSError as e:
     print(e)
 
 try:
     with open(gamefile, "a") as output:
-        for file in os.listdir(rompath):
+        for file in sorted(os.listdir(rompath)):
             if file.endswith(".zip"):
                 print(os.path.join(file))
                 output.write(file+"\n")
-    os.system(f"sort {gamefile} -o {gamefile}")
 except OSError as e:
     print(e)
