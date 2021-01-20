@@ -4,8 +4,8 @@ import os
 import arghelper
 from pathlib import Path
 
-rompath = arghelper.get_rompath()
-gamefile = arghelper.get_gameslist()
+rompath: Path = arghelper.get_rompath()
+gamefile: Path = arghelper.get_gameslist()
 
 try:
     with open(gamefile) as gameslist:

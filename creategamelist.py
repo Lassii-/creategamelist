@@ -6,13 +6,13 @@ import arghelper
 from pathlib import Path
 from datetime import datetime
 
-rompath = arghelper.get_rompath()
-gamefile = arghelper.get_gameslist()
+rompath: Path = arghelper.get_rompath()
+gamefile: Path = arghelper.get_gameslist()
 date = datetime.today().strftime("%d-%m-%Y")
 
 try:
     if gamefile.is_file():
-        print("There's already a gameslist-file, do you want to make a backup of it?")
+        print(f"There's already a {gamefile}-file, do you want to make a backup of it?")
         answer = input("Y/N?\n")
         while(answer != "Y" and answer != "N"):
             print("Only accepting Y for yes and N for no.")

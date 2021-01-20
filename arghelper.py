@@ -3,7 +3,7 @@ from pathlib import Path
 
 systems = ['MAME', 'NES', 'SNES', 'GB', 'GBC', 'N64', 'PCE', 'MD']
 
-def get_rompath():
+def get_rompath() -> Path:
     if len(sys.argv) > 2:
         print("Too many arguments.")
         sys.exit()
@@ -19,12 +19,11 @@ def get_rompath():
     return rompath
 
 
-def get_gameslist():
+def get_gameslist() -> Path:
     answer = input(f"Which platform? {systems} ")
 
     while(answer not in systems):
         print(f"You didn't pick a correct platform! Choose from {systems}")
         answer = input("Which platform? ")
     gamefile = Path(f"{answer}gameslist.txt")
-    print(gamefile)
     return gamefile
