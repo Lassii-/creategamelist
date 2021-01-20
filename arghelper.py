@@ -13,15 +13,12 @@ def get_rompath() -> Path:
     if len(sys.argv) < 2:
         rompath = Path.cwd()
     else:
-        if not Path(sys.argv[1]).exists:
-            print("The path you specified doesn't exist.")
-            sys.exit()
         rompath = sys.argv[1]
     rompath = Path(rompath)
     if(os.path.exists(rompath)):
         return rompath
     else:
-        print("The path given doesn't exist!")
+        print("The path specified doesn't exist!")
         sys.exit()
 
 
