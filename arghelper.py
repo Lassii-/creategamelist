@@ -33,3 +33,10 @@ def get_gameslist() -> Path:
         answer = input("Which platform? ").upper()
     gamefile = Path(f"{answer}gameslist.txt")
     return gamefile
+
+def main():
+    print("This file is not meant to be run on its own.")
+
+if __name__ == '__main__':
+    main()
+
