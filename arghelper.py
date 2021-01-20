@@ -28,9 +28,8 @@ def get_rompath() -> Path:
 # Sets the name of the list file based on user selection
 def get_gameslist() -> Path:
     answer = input(f"Which platform? {systems} ").upper()
-
     while(answer not in systems):
         print(f"You didn't pick a correct platform! Choose from {systems}")
-        answer = input("Which platform? ")
+        answer = input("Which platform? ").upper()
     gamefile = Path(f"{answer}gameslist.txt")
     return gamefile
