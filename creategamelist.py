@@ -10,6 +10,7 @@ rompath: Path = arghelper.get_rompath()
 gamefile: Path = arghelper.get_gameslist()
 date = datetime.today().strftime("%d-%m-%Y")
 
+
 def main():
     try:
         if gamefile.is_file():
@@ -27,15 +28,17 @@ def main():
                 gamefile.unlink()
     except OSError as e:
         print(e)
-
+    gamecounter = 0
     try:
         with open(gamefile, "a") as output:
             for file in sorted(os.listdir(rompath)):
                 if file.endswith(".zip"):
                     print(os.path.join(file))
+                    gamecounter += 1
                     output.write(file+"\n")
+        print(f"There's {gamecounter} games in the list.")
     except OSError as e:
         print(e)
 
-if __name__ == '__main__':     # Runs main() if file wasn't imported.
+if __name__ == '__main__': 
     main()
