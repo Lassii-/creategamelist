@@ -15,5 +15,5 @@ try:
             os.rename(os.path.join(rompath, game.strip()),
                       output / game.strip())
 except (OSError, FileNotFoundError) as e:
-    print("If you got an error saying gameslist.txt doesn't exist, you probably forgot to run creategamelist.py first.")
+    print(f"If you got an error saying {gamefile}.txt doesn't exist, you probably forgot to run creategamelist.py first.")
     print(e)
