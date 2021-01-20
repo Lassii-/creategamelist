@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 
+systems = ['MAME', 'NES', 'SNES', 'GB', 'GBC', 'N64', 'PCE', 'MD']
 
 def get_rompath():
     if len(sys.argv) > 2:
@@ -19,28 +20,11 @@ def get_rompath():
 
 
 def get_gameslist():
-    answer = input("Which platform? (MAME/NES/SNES/GB/GBC/GBA/N64/PCE/MD) ")
+    answer = input(f"Which platform? {systems} ")
 
-    while(answer != "MAME" and answer != "NES" and answer != "SNES" and answer != "GB" and answer != "GBC" and answer != "GBA" and answer != "N64" and answer != "PCE" and answer != "MD"):
-        print("You didn't pick a correct platform! Choose from MAME/NES/SNES/GB/GBC/N64/PCE/MD")
+    while(answer not in systems):
+        print(f"You didn't pick a correct platform! Choose from {systems}")
         answer = input("Which platform? ")
-
-    if(answer == "MAME"):
-        gamefile = Path("MAMEgameslist.txt")
-    elif(answer == "NES"):
-        gamefile = Path("NESgameslist.txt")
-    elif(answer == "SNES"):
-        gamefile = Path("SNESgameslist.txt")
-    elif(answer == "GB"):
-        gamefile = Path("GBgameslist.txt")
-    elif(answer == "GBC"):
-        gamefile = Path("GBCgameslist.txt")
-    elif(answer == "GBA"):
-        gamefile = Path("GBAgameslist.txt")
-    elif(answer == "N64"):
-        gamefile = Path("N64gameslist.txt")
-    elif(answer == "PCE"):
-        gamefile = Path("PCEgameslist.txt")
-    elif(answer == "MD"):
-        gamefile = Path("MDgameslist.txt")
+    gamefile = Path(f"{answer}gameslist.txt")
+    print(gamefile)
     return gamefile
