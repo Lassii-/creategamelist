@@ -13,7 +13,7 @@ date = datetime.today().strftime("%d-%m-%Y")
 try:
     if gamefile.is_file():
         print(f"There's already a {gamefile}-file, do you want to make a backup of it?")
-        answer = input("Y/N?\n")
+        answer = input("Y/N?\n").upper()
         while(answer != "Y" and answer != "N"):
             print("Only accepting Y for yes and N for no.")
             answer = input("Y/N?\n")
