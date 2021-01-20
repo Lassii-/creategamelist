@@ -7,6 +7,7 @@ from pathlib import Path
 rompath: Path = arghelper.get_rompath()
 gamefile: Path = arghelper.get_gameslist()
 
+
 def main():
     try:
         with open(gamefile) as gameslist:
@@ -18,6 +19,7 @@ def main():
     except (OSError, FileNotFoundError) as e:
         print(e)
         print(f"If you got an error saying {gamefile}.txt doesn't exist, you probably forgot to run creategamelist.py first.")
+
 
 if __name__ == '__main__':
     main()

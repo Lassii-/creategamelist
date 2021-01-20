@@ -40,5 +40,6 @@ def main():
     except OSError as e:
         print(e)
 
-if __name__ == '__main__': 
+
+if __name__ == '__main__':
     main()
